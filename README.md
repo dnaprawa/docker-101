@@ -70,13 +70,13 @@ Running WordPress using commands:
 ```sh
 docker network create -d bridge wp
 
-docker run -d -p 3306:3306 --name db -e MYSQL_DATABASE=exampledb -e \
-MYSQL_USER=exampleuser -e MYSQL_PASSWORD=examplepass \ 
+docker run -d -p 3306:3306 --name db -e MYSQL_DATABASE=exampledb \
+-e MYSQL_USER=exampleuser -e MYSQL_PASSWORD=examplepass \ 
 -e MYSQL_RANDOM_ROOT_PASSWORD=1 --network=wp \
 --restart=always mysql:5.7 
 
-docker run -d -p 8080:80 -e WORDPRESS_DB_HOST=db:3306 -e \
-WORDPRESS_DB_USER=exampleuser -e WORDPRESS_DB_PASSWORD=examplepass \
+docker run -d -p 8080:80 -e WORDPRESS_DB_HOST=db:3306 \
+-e WORDPRESS_DB_USER=exampleuser -e WORDPRESS_DB_PASSWORD=examplepass \
 -e WORDPRESS_DB_NAME=exampledb --network=wp \
 --restart=always wordpress:latest
 ```
