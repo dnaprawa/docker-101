@@ -24,7 +24,7 @@ services:
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-      - D:/moj_katalog:/var/lib/mysql
+      - db-vol:/var/lib/mysql
 
 volumes:
   wordpress-volume:
